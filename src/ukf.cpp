@@ -283,7 +283,7 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   P_ = P_ - K*S*K.transpose();
 
   //calculate NIS
-  NIS_lidar = z_diff.transpose() * S.inverse() * z_diff;
+  NIS_lidar_ = z_diff.transpose() * S.inverse() * z_diff;
 }
 
 void UKF::UpdateRadar(MeasurementPackage meas_package) {
